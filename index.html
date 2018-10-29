@@ -2,6 +2,10 @@
 <html>
 <link href='https://fonts.googleapis.com/css?family=Space Mono' rel='stylesheet'>
 <style>
+    body {
+        font-family: 'Space Mono';
+        color: white;
+    }
     img {
         width:95vw;
         height:95vh;
@@ -13,18 +17,27 @@
     }
 
     h1 {
+        font-size: 3.5em;
+        margin-bottom:0em;
+    }
+
+    div {
         position: absolute;
-        color: white;
-        top: 200px;
-        z-index:1;
         left: 22%;
         top:30%;
-        font-family: 'Space Mono';
-        font-size: 3.5em;
+        z-index:1;
+        text-align:center;
+    }
+
+    a {
+        cursor: pointer;
     }
 </style>
 <body>
-    <h1>Jake O'Rielly</h1>
+    <div>
+        <h1>Jake O'Rielly</h1>
+        <h2> <a>Bio</a> &bull; <a>Projects</a> &bull; <a>Resume</a></h2>
+    </div>
     <img src='code1.png'>
 </body>
 </html>
