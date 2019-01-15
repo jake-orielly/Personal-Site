@@ -4,14 +4,11 @@
 <style>
     body {
         font-family: 'Space Mono';
-        color: white;
-        background: linear-gradient(rgba(30,30,30,0.8),rgba(100,100,100,0.8));
+        color: #0b3c5d;
     }
-    img {
+    .banner-image {
         width:95vw;
         height:95vh;
-        -webkit-clip-path: polygon(0% 0, 100% 0%, 100% 90%, 0% 100%);
-        clip-path: polygon(0% 10%, 100% 0%, 100% 90%, 0% 100%);
         filter: saturate(160%) blur(1px);
         -webkit-filter: saturate(160%) blur(2px);
         z-index:-1;
@@ -20,17 +17,24 @@
     h1 {
         font-size: 3.5em;
         margin-bottom:0em;
+        text-shadow: 2px 1px 0px black;
     }
 
-    div {
-        text-align:center;
+    h2 { 
+
     }
 
     .page-top{
         position: absolute;
-        left: 22%;
-        top:30%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        top:22%;
         z-index:1;
+        text-align:center;
+        box-shadow: 0.5em 0.5em 1em;
+        border: 5px solid #0b3c5d;
+        padding: 1em;
+        background: rgba(255,255,255,0.7);
     }
 
     a {
@@ -39,13 +43,40 @@
         display:inline-block;
     }
 
+    a:hover {
+        transform: translateY(-4px) scale(1.05);
+        text-shadow: 1px 1px 1px black;
+    }
+
     h3 {
         text-decoration: underline;
         font-size: 2.5em;
+        text-align:center;
     }
 
-    a:hover {
-        transform: translateY(-4px) scale(1.05);
+    .project-div {
+        display: inline-block;
+    }
+
+    h4, .project-image {
+        margin-left: 15%;
+    }
+
+    h4 {
+        font-size:24px;
+        text-decoration: underline;
+    }
+
+    .project-image {
+        width: 20%;
+        height: 20%;
+    }
+
+    p {
+        width: 45%;
+        float: right;
+        margin-right: 15%;
+        margin-top: 2em;
     }
 </style>
 <body>
@@ -53,13 +84,33 @@
         <h1>Jake O'Rielly</h1>
         <h2> <a>Bio</a> &bull; <a>Projects</a> &bull; <a>Resume</a></h2>
     </div>
-    <img src='code1.png'>
+    <img class='banner-image' src='code4.png'>
 
     <div>
         <h3>Bio</h3>
     </div>  
     <div>
         <h3>Projects</h3>
+        <script>
+            var slime = {title:'Slime',img:'slime.png',text:`Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Nullam aliquet nulla vel lobortis elementum. \nProin nec sollicitudin justo, id semper orci. Quisque ut tortor erat. 
+            Praesent congue lacus orci. \nDonec massa mauris, accumsan non consequat et, eleifend vulputate velit.`}
+            var inquisition = {title:'Inquisition',img:'inqiusition.png',text:`Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Nullam aliquet nulla vel lobortis elementum. \nProin nec sollicitudin justo, id semper orci. Quisque ut tortor erat. 
+            Praesent congue lacus orci. \nDonec massa mauris, accumsan non consequat et, eleifend vulputate velit.`}
+            var projects = [slime,inquisition];
+
+            for (var i = 0; i < projects.length; i++) {
+                curr = projects[i];
+                currProject = '';
+                currProject += "<div class='project-div'>";
+                currProject += '<p>' + curr['text'] + '</p>';
+                currProject += '<h4>' + curr['title'] + '</h4>';
+                currProject += "<img class='project-image' src='" + curr['img'] + "'>"
+                currProject += '</div>';
+                document.write(currProject);
+            }
+        </script>
     </div>  
     <div>
         <h3>Resume</h3>
