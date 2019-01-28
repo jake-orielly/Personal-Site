@@ -20,10 +20,6 @@
         text-shadow: 2px 1px 0px black;
     }
 
-    h2 { 
-
-    }
-
     .page-top{
         position: absolute;
         left: 50%;
@@ -38,6 +34,8 @@
     }
 
     a {
+        color: #0b3c5d;
+        text-decoration: none;
         cursor: pointer;
         transition: all .35s;
         display:inline-block;
@@ -56,15 +54,23 @@
 
     .project-div {
         display: inline-block;
+        margin-bottom: 2em;
     }
 
-    h4, .project-image {
+    .project-div a, .project-image {
         margin-left: 15%;
     }
 
-    h4 {
-        font-size:24px;
+    .project-div a{
+        width: 100%;
+        font-size:2em;
+        font-weight: bold;
         text-decoration: underline;
+    }
+
+    .project-div a:hover {
+        transform: translate(8px,-4px) scale(1.03);
+        text-shadow: 1px 1px 1px black;
     }
 
     .project-image {
@@ -72,47 +78,73 @@
         height: 20%;
     }
 
-    p {
+    .project-div p {
         width: 45%;
         float: right;
         margin-right: 15%;
-        margin-top: 2em;
+        margin-top: 0;
+    }
+
+    #bioDiv {
+        display: inline-block;
+        position: relative;
+    }
+
+    #bioDiv p{
+        width: 80%;
+        margin-left: 10%;
+        text-align: center;
     }
 </style>
 <body>
     <div class='page-top'>
         <h1>Jake O'Rielly</h1>
-        <h2> <a>Bio</a> &bull; <a>Projects</a> &bull; <a>Resume</a></h2>
+        <h2> <a href="#bio">Bio</a> &bull; <a href="#projects">Projects</a> &bull; <a href="#resume">Resume</a></h2>
     </div>
     <img class='banner-image' src='code4.png'>
 
-    <div>
-        <h3>Bio</h3>
+    <div id='bioDiv'>
+        <h3 id="bio">Bio</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Nullam aliquet nulla vel lobortis elementum. Proin nec sollicitudin justo, id semper orci. 
+            Quisque ut tortor erat. Praesent congue lacus orci. 
+            Donec massa mauris, accumsan non consequat et, eleifend vulputate velit.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Nullam aliquet nulla vel lobortis elementum. Proin nec sollicitudin justo, id semper orci. 
+            Quisque ut tortor erat. Praesent congue lacus orci. 
+            Donec massa mauris, accumsan non consequat et, eleifend vulputate velit.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Nullam aliquet nulla vel lobortis elementum. Proin nec sollicitudin justo, id semper orci. 
+            Quisque ut tortor erat. Praesent congue lacus orci. 
+            Donec massa mauris, accumsan non consequat et, eleifend vulputate velit.</p>
     </div>  
     <div>
-        <h3>Projects</h3>
+        <h3 id="projects">Projects</h3>
         <script>
             var slime = {title:'Slime',img:'slime.png',text:`Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
             Nullam aliquet nulla vel lobortis elementum. \nProin nec sollicitudin justo, id semper orci. Quisque ut tortor erat. 
-            Praesent congue lacus orci. \nDonec massa mauris, accumsan non consequat et, eleifend vulputate velit.`}
+            Praesent congue lacus orci. \nDonec massa mauris, accumsan non consequat et, eleifend vulputate velit.`,link:'Slime/slime.html'}
             var inquisition = {title:'Inquisition',img:'inqiusition.png',text:`Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
             Nullam aliquet nulla vel lobortis elementum. \nProin nec sollicitudin justo, id semper orci. Quisque ut tortor erat. 
-            Praesent congue lacus orci. \nDonec massa mauris, accumsan non consequat et, eleifend vulputate velit.`}
-            var projects = [slime,inquisition];
+            Praesent congue lacus orci. \nDonec massa mauris, accumsan non consequat et, eleifend vulputate velit.`,link:'#'}
+            var tbs = {title:'TBS-Prototype',img:'tbs.png',text:`Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Nullam aliquet nulla vel lobortis elementum. \nProin nec sollicitudin justo, id semper orci. Quisque ut tortor erat. 
+            Praesent congue lacus orci. \nDonec massa mauris, accumsan non consequat et, eleifend vulputate velit.`,link:'#'}
+            var projects = [slime,inquisition,tbs];
 
             for (var i = 0; i < projects.length; i++) {
                 curr = projects[i];
                 currProject = '';
                 currProject += "<div class='project-div'>";
+                currProject += '<a href=' + curr['link'] + '>' + curr['title'] + '</a>';
                 currProject += '<p>' + curr['text'] + '</p>';
-                currProject += '<h4>' + curr['title'] + '</h4>';
                 currProject += "<img class='project-image' src='" + curr['img'] + "'>"
                 currProject += '</div>';
                 document.write(currProject);
             }
         </script>
     </div>  
-    <div>
+    <div id="resume">
         <h3>Resume</h3>
     </div>  
 </body>
