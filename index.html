@@ -6,31 +6,32 @@
         font-family: 'Space Mono';
         color: #0b3c5d;
     }
+
     .banner-image {
-        width:95vw;
-        height:95vh;
+        width: 95vw;
+        height: 95vh;
         filter: saturate(160%) blur(1px);
         -webkit-filter: saturate(160%) blur(2px);
-        z-index:-1;
+        z-index: -1;
     }
 
     h1 {
         font-size: 3.5em;
-        margin-bottom:0em;
+        margin-bottom: 0em;
         text-shadow: 2px 1px 0px black;
     }
 
-    .page-top{
+    .page-top {
         position: absolute;
         left: 50%;
         transform: translate(-50%, 0);
-        top:22%;
-        z-index:1;
-        text-align:center;
+        top: 22%;
+        z-index: 1;
+        text-align: center;
         box-shadow: 0.5em 0.5em 1em;
         border: 5px solid #0b3c5d;
         padding: 1em;
-        background: rgba(255,255,255,0.7);
+        background: rgba(255, 255, 255, 0.7);
     }
 
     a {
@@ -38,7 +39,7 @@
         text-decoration: none;
         cursor: pointer;
         transition: all .35s;
-        display:inline-block;
+        display: inline-block;
     }
 
     a:hover {
@@ -49,7 +50,7 @@
     h3 {
         text-decoration: underline;
         font-size: 2.5em;
-        text-align:center;
+        text-align: center;
     }
 
     .project-div {
@@ -57,19 +58,20 @@
         margin-bottom: 2em;
     }
 
-    .project-div a, .project-image {
+    .project-div a,
+    .project-image {
         margin-left: 15%;
     }
 
-    .project-div a{
+    .project-div a {
         width: 100%;
-        font-size:2em;
+        font-size: 2em;
         font-weight: bold;
         text-decoration: underline;
     }
 
     .project-div a:hover {
-        transform: translate(8px,-4px) scale(1.03);
+        transform: translate(8px, -4px) scale(1.03);
         text-shadow: 1px 1px 1px black;
     }
 
@@ -90,12 +92,13 @@
         position: relative;
     }
 
-    #bioDiv p{
+    #bioDiv p {
         width: 80%;
         margin-left: 10%;
         text-align: center;
     }
 </style>
+
 <body>
     <div class='page-top'>
         <h1>Jake O'Rielly</h1>
@@ -105,32 +108,23 @@
 
     <div id='bioDiv'>
         <h3 id="bio">Bio</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Nullam aliquet nulla vel lobortis elementum. Proin nec sollicitudin justo, id semper orci. 
-            Quisque ut tortor erat. Praesent congue lacus orci. 
-            Donec massa mauris, accumsan non consequat et, eleifend vulputate velit.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Nullam aliquet nulla vel lobortis elementum. Proin nec sollicitudin justo, id semper orci. 
-            Quisque ut tortor erat. Praesent congue lacus orci. 
-            Donec massa mauris, accumsan non consequat et, eleifend vulputate velit.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Nullam aliquet nulla vel lobortis elementum. Proin nec sollicitudin justo, id semper orci. 
-            Quisque ut tortor erat. Praesent congue lacus orci. 
-            Donec massa mauris, accumsan non consequat et, eleifend vulputate velit.</p>
-    </div>  
+        <p>I am a software engineer at Sefas Innovation. I am passionate about self teaching and am always looking to
+            improve my technical skills and understanding. I recieved a B.S. in Economics from the University of
+            Massachusetts Amherst, and during that time fell in love with computer science. I pursued a minor in
+            Information Technology in order to take a number of computer science courses while there, and have been
+            pursuing a career in the field since graudation..</p>
+    </div>
     <div>
         <h3 id="projects">Projects</h3>
         <script>
-            var slime = {title:'Slime',img:'slime.png',text:`Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Nullam aliquet nulla vel lobortis elementum. \nProin nec sollicitudin justo, id semper orci. Quisque ut tortor erat. 
-            Praesent congue lacus orci. \nDonec massa mauris, accumsan non consequat et, eleifend vulputate velit.`,link:'Slime/slime.html'}
-            var inquisition = {title:'Inquisition',img:'inqiusition.png',text:`Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Nullam aliquet nulla vel lobortis elementum. \nProin nec sollicitudin justo, id semper orci. Quisque ut tortor erat. 
-            Praesent congue lacus orci. \nDonec massa mauris, accumsan non consequat et, eleifend vulputate velit.`,link:'#'}
-            var tbs = {title:'TBS-Prototype',img:'tbs.png',text:`Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Nullam aliquet nulla vel lobortis elementum. \nProin nec sollicitudin justo, id semper orci. Quisque ut tortor erat. 
-            Praesent congue lacus orci. \nDonec massa mauris, accumsan non consequat et, eleifend vulputate velit.`,link:'#'}
-            var projects = [slime,inquisition,tbs];
+            var slime = { title: 'Slime', img: 'slime.png', text: `A puzzle game where the player assembles their character from a collection of modular blocks modeled as a tree. Player interactions with the game world can organically add nodes, remove nodes or subtrees, and execute functions on subtrees.`, link: 'Slime/slime.html' }
+            var inquisition = {
+                title: 'Inquisition', img: 'inqiusition.png', text: `An old school adventure with some modern mechanics. Callbacks allow the player character to modify their actions in dynamic ways. NPCs converse with the player using dialogue trees. The game also features a complex built from scratch user interface.`, link: '#'
+            }
+            var tbs = {
+                title: 'TBS-Prototype', img: 'tbs.png', text: `Player and AI both control multiple units as they fight over territory. Units implement a path finding algorithm to calculate the most efficient route over varying terrain types.`, link: '#'
+            }
+            var projects = [slime, inquisition, tbs];
 
             for (var i = 0; i < projects.length; i++) {
                 curr = projects[i];
@@ -143,9 +137,10 @@
                 document.write(currProject);
             }
         </script>
-    </div>  
+    </div>
     <div id="resume">
         <h3>Resume</h3>
-    </div>  
+    </div>
 </body>
+
 </html>
